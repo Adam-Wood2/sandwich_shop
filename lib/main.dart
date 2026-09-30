@@ -14,10 +14,9 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Sandwhich Counter"),),
         body: const Center(
-          child: Text("Welcome to the sandwhich shop"),
+          child: OrderItemDisplay(5, "Footlong")),
         )
-      )
-    );
+      );
   }
 }
 
@@ -29,7 +28,7 @@ class OrderItemDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("$quantity $itemType sandwich(es): ${'🥪' * quantity}");
+    return Text("$quantity $itemType sandwich(es): ${'🥪' * quantity}");
   }
 }
 
