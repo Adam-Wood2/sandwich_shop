@@ -10,20 +10,34 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sandwhich Shop App",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Sandwhich Counter"),
-          backgroundColor: Colors.orange,
+        title: "Sandwhich Shop App",
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Sandwhich Counter"),
+            backgroundColor: Colors.orange,
           ),
-        body: const Center(
-          child: OrderItemDisplay(5, "Footlong")),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(Icons.add),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OrderItemDisplay(5, "footlong"),
+              Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () => print("Add button"),
+                      child: const Text("Add")),
+                  const SizedBox(width: 16),
+                  ElevatedButton(
+                      onPressed: () => print("Subtraction button"),
+                      child: const Text("Remove"))
+                ],
+              )
+            ],
           ),
-        )
-      );
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(Icons.add),
+          ),
+        ));
   }
 }
 
